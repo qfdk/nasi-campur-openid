@@ -1,0 +1,24 @@
+{
+  "name": "nasi-campur-openid",
+  "debug": "oidc-provider:*",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "DEBUG=oidc-provider:* && nodemon ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "ioredis": "^4.27.9",
+    "lodash": "^4.17.21",
+    "morgan": "~1.9.1",
+    "nanoid": "^3.1.25",
+    "oidc-provider": "^7.10.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
