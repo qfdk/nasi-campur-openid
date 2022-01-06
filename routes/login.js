@@ -56,7 +56,7 @@ module.exports = (app, provider) => {
                 uid, prompt, params, session
             } = await provider.interactionDetails(req, res);
 
-            // console.log(params.scope);
+            console.log({uid, prompt, params, session});
 
             const client = await provider.Client.find(params.client_id);
 
@@ -120,6 +120,7 @@ module.exports = (app, provider) => {
             // await session.save(2222);
             await provider.interactionFinished(req, res, result, {mergeWithLastSubmission: false});
         } catch (err) {
+            console.log(err);
             next(err);
         }
     });
@@ -192,7 +193,7 @@ module.exports = (app, provider) => {
             // handle interaction expired / session not found error
             console.log('这里 缺 session');
         }
-        // console.log(err);
+        console.log(err);
         next(err);
     });
 };

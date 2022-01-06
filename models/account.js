@@ -55,7 +55,7 @@ class Account {
     }
 
     static async findAccount(ctx, id, token) { // eslint-disable-line no-unused-vars
-        console.log('findAccount开始了', id, token);
+        // console.log('findAccount开始了', id, token);
         // token is a reference to the token used for which a given account is being loaded,
         //   it is undefined in scenarios where account claims are returned from authorization endpoint
         // ctx is the koa request context
