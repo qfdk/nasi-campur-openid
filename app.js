@@ -56,13 +56,12 @@ app.get('/info', (req, res, next) => {
     res.json({});
 });
 
-app.get('/auth', (req, res, next) => {
+app.get('/uaa/auth', (req, res, next) => {
     if (!req.query.prompt) {
         req.url = `${req.path}?${querystring.stringify(req.query)}&prompt=consent`;
     }
     next();
 });
-
 loginRoute(app, provider);
-app.use(provider.callback());
+app.use("/uaa",provider.callback());
 module.exports = app;
