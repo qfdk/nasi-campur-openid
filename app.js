@@ -55,6 +55,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/info', (req, res, next) => {
     res.json({});
 });
+
 app.get('/auth', (req, res, next) => {
     if (!req.query.prompt) {
         req.url = `${req.path}?${querystring.stringify(req.query)}&prompt=consent`;

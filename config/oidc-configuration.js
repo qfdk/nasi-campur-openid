@@ -75,11 +75,11 @@ module.exports = {
         // console.log(ctx.oidc.result);
         console.log('loadExistingGrant', grantId);
         if (grantId) {
-            console.log('应该有 grantId');
+            console.log('should have grantId');
             const grant = await ctx.oidc.provider.Grant.find(grantId);
             return !grant ? await createGrantObject(ctx) : grant;
         } else if (ctx.oidc.client) {
-            console.log('建立新的 grant');
+            console.log('create nwe grant');
             return await createGrantObject(ctx);
         }
     },

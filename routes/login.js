@@ -191,7 +191,7 @@ module.exports = (app, provider) => {
     app.use((err, req, res, next) => {
         if (err instanceof SessionNotFound) {
             // handle interaction expired / session not found error
-            console.log('这里 缺 session');
+            console.log(' SessionNotFound');
         }
         console.log(err);
         next(err);
