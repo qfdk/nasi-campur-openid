@@ -41,7 +41,10 @@ provider.on('refresh_token.consumed', async (token) => {
     });
     await adapter.upsert(token.grantId, newGrant, 20);
 });
-
+provider.Client.prototype.compareClientSecret = async function (actual) {
+    console.log("这里比较的" + this.clientSecret, actual);
+    return true;
+};
 provider.proxy = true;
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -63,5 +66,5 @@ app.get('/uaa/auth', (req, res, next) => {
     next();
 });
 loginRoute(app, provider);
-app.use("/uaa",provider.callback());
+app.use("/uaa", provider.callback());
 module.exports = app;

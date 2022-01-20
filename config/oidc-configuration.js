@@ -10,7 +10,10 @@ const createGrantObject = async (ctx) => {
         clientId: ctx.oidc.client.clientId,
         accountId: ctx.oidc.session.accountId
     });
-    grant.addOIDCScope('openid email offline_access');
+    console.log(
+        `scopes : ${ctx.oidc.client.scope}`
+    );
+    grant.addOIDCScope(ctx.oidc.client.scope);
     await grant.save();
     return grant;
 };
@@ -30,9 +33,10 @@ module.exports = {
             client_secret: 'qq',
             redirect_uris: ['http://localhost:3001/callback'],
             grant_types: ['authorization_code', 'refresh_token'],
-            scope: 'openid email offline_access'
+            scope: 'openid phone offline_access'
         }
     ],
+    // scopes: ["openid", "email", "offline_access"],
     interactions: {
         url(ctx, interaction) { // eslint-disable-line no-unused-vars
             return `/interaction/${interaction.uid}`;
@@ -51,7 +55,7 @@ module.exports = {
             'birthdate', 'family_name', 'gender', 'given_name', 'locale', 'middle_name', 'name',
             'username', 'picture', 'preferred_username', 'profile', 'updated_at', 'website', 'zoneinfo']
     },
-    // scopes: ['openid','offline_access','profile'],
+    // scopes: ['openid', 'offline_access', 'profile', 'phone'],
     features: {
         devInteractions: {enabled: false}, // defaults to true
         deviceFlow: {enabled: true}, // defaults to false
