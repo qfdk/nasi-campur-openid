@@ -21,14 +21,14 @@ const userinfo = {
     middle_name: 'Middle',
     name: 'John Doe',
     username: 'Johny',
-    phone_number: '+49 000 000000',
-    phone_number_verified: false,
-    picture: 'http://lorempixel.com/400/200/',
-    preferred_username: 'johnny',
-    profile: 'https://johnswebsite.com',
-    updated_at: 1454704946,
-    website: 'http://example.com',
-    zoneinfo: 'Europe/Berlin'
+    // phone_number: '+49 000 000000',
+    // phone_number_verified: false,
+    // picture: 'http://lorempixel.com/400/200/',
+    // preferred_username: 'johnny',
+    // profile: 'https://johnswebsite.com',
+    // updated_at: 1454704946,
+    // website: 'http://example.com',
+    // zoneinfo: 'Europe/Berlin'
 };
 
 class Account {
@@ -55,7 +55,7 @@ class Account {
     }
 
     static async findAccount(ctx, id, token) { // eslint-disable-line no-unused-vars
-        // console.log('findAccount开始了', id, token);
+        console.log('findAccount开始了', id, token);
         // token is a reference to the token used for which a given account is being loaded,
         //   it is undefined in scenarios where account claims are returned from authorization endpoint
         // ctx is the koa request context

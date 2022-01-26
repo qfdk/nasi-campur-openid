@@ -34,6 +34,13 @@ module.exports = {
             redirect_uris: ['http://localhost:3001/callback'],
             grant_types: ['authorization_code', 'refresh_token'],
             scope: 'openid phone offline_access'
+        },
+        {
+            client_id: 'qqq',
+            client_secret: 'qqq',
+            redirect_uris: [],
+            response_types: [],
+            grant_types: ['client_credentials']
         }
     ],
     // scopes: ["openid", "email", "offline_access"],
