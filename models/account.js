@@ -21,14 +21,14 @@ const userinfo = {
     middle_name: 'Middle',
     name: 'John Doe',
     username: 'Johny',
-    // phone_number: '+49 000 000000',
-    // phone_number_verified: false,
-    // picture: 'http://lorempixel.com/400/200/',
-    // preferred_username: 'johnny',
-    // profile: 'https://johnswebsite.com',
-    // updated_at: 1454704946,
-    // website: 'http://example.com',
-    // zoneinfo: 'Europe/Berlin'
+    phone_number: '+49 000 000000',
+    phone_number_verified: false,
+    picture: 'http://lorempixel.com/400/200/',
+    preferred_username: 'johnny',
+    profile: 'https://johnswebsite.com',
+    updated_at: 1454704946,
+    website: 'http://example.com',
+    zoneinfo: 'Europe/Berlin'
 };
 
 class Account {
