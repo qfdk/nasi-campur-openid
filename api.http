@@ -1,8 +1,0 @@
-POST http://localhost:3000/token
-Content-Type: application/x-www-form-urlencoded
-
-grant_type=authorization_code&
-code=IQ3pzapS76COu4RPtcNaODmgYEaGG-QscFSWBG1NBa7&
-client_id=q&
-client_secret=q&
-redirect_uri=https%3A%2F%2Foidcdebugger.com%2Fdebug

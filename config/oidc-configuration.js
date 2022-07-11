@@ -22,16 +22,9 @@ module.exports = {
     findAccount: account.findAccount,
     clients: [
         {
-            client_id: 'q',
-            client_secret: 'q',
-            redirect_uris: ['https://oidcdebugger.com/debug', 'http://localhost:3000/auth/callback'],
-            grant_types: ['authorization_code', 'refresh_token'],
-            scope: 'openid profile email phone offline_access'
-        },
-        {
-            client_id: 'qq',
-            client_secret: 'qq',
-            redirect_uris: ['https://oidcdebugger.com/debug', 'http://localhost:3000/auth/callback'],
+            client_id: process.env.client_id || 'q',
+            client_secret: process.env.client_secret || 'q',
+            redirect_uris: ['https://oidcdebugger.com/debug', 'https://openid.qfdk.me/auth/callback', 'https://localhost:3000/auth/callback'],
             grant_types: ['authorization_code', 'refresh_token'],
             scope: 'openid profile email phone offline_access'
         },
